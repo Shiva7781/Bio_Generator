@@ -1,23 +1,25 @@
 .Display_Data {
-    margin: 21%;
+    margin: 18%;
     margin-top: 3%;
 
     /* border: 1px solid red; */
 }
 
-.Display_Data h2 {
+.Display_Data div>h2 {
     height: max-content;
-    padding: 3%;
+    padding: 4.4%;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
     background-color: rgb(186, 195, 190);
 }
 
-p {
+.Display_Data p {
     height: max-content;
     padding: 3%;
+    margin: auto;
+    margin-top: 6%;
     text-align: left;
+    font-size: large;
     background-color: rgb(186, 195, 190);
 }

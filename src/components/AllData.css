@@ -4,17 +4,18 @@ body {
 
 .All_Data {
     display: flex;
-    justify-content: space-around;
+    margin: 7%;
+    margin-top: 1.7%;
 
     /* border: 1px solid red; */
 }
 
-.Left_Div {
-    border: 1px solid red;
-}
-
+.Left_Div,
 .Right_Div {
-    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
 }
 
 @media only screen and (max-width: 1111px) {

@@ -5,9 +5,9 @@ const DisplayData = () => {
   return (
     <div className="Display_Data">
       <div>
-        <h2>Options</h2>
+        <h2>Result</h2>
       </div>
-      <div>
+      <div className="Show">
         <p>
           Will is from Vale, Oregon. He is studying Accounting at BYU. He was
           raised without any religion in the home. For most of his life, he has

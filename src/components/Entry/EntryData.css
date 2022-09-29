@@ -23,31 +23,53 @@
     /* border: 1px solid red; */
 }
 
-label {
-    vertical-align: middle;
-    margin: 3px;
-}
-
-input {
+label,
+select {
+    margin: 7px;
     padding: 2px;
-    background-color: #fff7;
-    border: 1px solid#222b;
+    border: none;
+    vertical-align: middle;
 }
 
-option {
-    font-weight: normal;
-
-}
-
-button {
-    padding: 3px;
-    margin: 5px;
-    background-color: #ddd9;
-
-    border: 1px solid;
-
-}
-
+input,
 textarea {
-    background-color: #ddd9;
+    vertical-align: middle;
+    margin: 7px;
+    padding: 2px;
+    border: 1px solid;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+option,
+button {
+    vertical-align: middle;
+    margin: 7px;
+    padding: 2px;
+    border: 1px solid;
+    background-color: rgba(239, 226, 226, 0.6);
+}
+
+
+.Restoration {
+    background-color: rgb(212, 177, 128)
+}
+
+.Plan {
+    background-color: rgb(157, 205, 109);
+}
+
+.Gospel {
+    background-color: rgb(136, 131, 207)
+}
+
+.Law {
+    background-color: rgb(197, 133, 111);
+}
+
+.Word {
+    background-color: rgb(232, 133, 133);
+}
+
+.Any {
+    background-color: rgb(205, 223, 213);
 }
