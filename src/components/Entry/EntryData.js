@@ -1,83 +1,215 @@
-import React from "react";
+import React, { useState } from "react";
 import "./EntryData.css";
 
 const EntryData = () => {
+  const [check, setCheck] = useState({
+    location: true,
+    school: true,
+    occupation: true,
+    religion: true,
+    reason: true,
+  });
+
+  const [entryData, setEntryData] = useState({
+    username: "",
+    gender: "male",
+    location_text: "",
+    school_text: "",
+    major: "",
+    occupation_text: "",
+    religious_txt: "",
+    reason: "",
+  });
+
+  const [records, setRecords] = useState({});
+
+  const handleInput = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    // console.log(`Field: ${field}  & Value: ${value}`);
+
+    setEntryData({ ...entryData, [field]: value });
+  };
+
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    // const newRecord = { ...entryData, id: new Date().toLocaleTimeString() };
+    const newRecord = { ...entryData, id: new Date().getTime().toString() };
+
+    console.log("records:", records);
+    console.log("newRecord:", newRecord);
+
+    setRecords({ ...records, newRecord });
+
+    // setEntryData({
+    //   username: "",
+    //   gender: "male",
+    //   location_text: "",
+    //   school_text: "",
+    //   major: "",
+    //   occupation_text: "",
+    //   religious_txt: "",
+    //   reason: "",
+    // });
+  };
+
+  const handleCheck = () => {
+    if (check) {
+      setCheck(false);
+    } else {
+      setCheck(true);
+    }
+  };
+
   return (
     <div className="Entry_Data">
       <div>
         <h2>Options</h2>
       </div>
 
-      <form className="Option_Form">
+      <form className="Option_Form" onSubmit={submitForm}>
         <div className="Form_Div">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name"></input>
+          <label htmlFor="username">Name</label>
+          <input
+            type="text"
+            name="username"
+            value={entryData.username}
+            onChange={handleInput}
+          ></input>
 
-          <label for="Gender">Gender</label>
-          <select name="Gender">
+          <label htmlFor="gender">Gender</label>
+          <select name="gender">
             <option>Mele</option>
             <option>Female</option>
           </select>
-          <button>Random Name</button>
+          <button onClick={() => console.log("Click")}>Random Name</button>
         </div>
 
         <div className="Form_Div">
-          <label for="location">
-            <input type="checkbox" name="location" id="location"></input>
+          <label htmlFor="location_text">
+            <input
+              type="checkbox"
+              name="location"
+              // checked={check}
+              onChange={handleCheck}
+            ></input>
             Location
           </label>
-          <input type="text" name="location" id="location"></input>
-          <button>Random Location</button>
+          <input
+            type="text"
+            name="location_text"
+            value={entryData.location_text}
+            onChange={handleInput}
+          ></input>
+          <button onClick={() => console.log("Location")}>
+            Random Location
+          </button>
         </div>
 
         <div className="Form_Div">
-          <label for="school">
-            <input type="checkbox" name="school" id="school"></input>
+          <label htmlFor="school_text">
+            <input
+              type="checkbox"
+              name="school"
+              // checked={check}
+              onChange={handleCheck}
+            ></input>
             School
           </label>
-          <input type="text" name="school" id="school"></input>
-          <button>Random School</button>
+          <input
+            type="text"
+            name="school_text"
+            value={entryData.school_text}
+            onChange={handleInput}
+          ></input>
+          <button onClick={() => console.log("School")}>Random School</button>
           <br />
 
-          <label for="Major">Major</label>
-          <input type="text" name="Major" id="Major"></input>
-          <button>Random Major</button>
+          <label htmlFor="major">Major</label>
+          <input
+            type="text"
+            name="major"
+            value={entryData.major}
+            onChange={handleInput}
+          ></input>
+          <button onClick={() => console.log("Major")}>Random Major</button>
         </div>
 
         <div className="Form_Div">
-          <label for="occupation">
-            <input type="checkbox" name="occupation" id="occupation"></input>
+          <label htmlFor="occupation_text">
+            <input type="checkbox" name="occupation"></input>
             Occupation
           </label>
-          <input type="text" name="occupation" id="occupation"></input>
+          <input
+            type="text"
+            name="occupation_text"
+            value={entryData.occupation_text}
+            onChange={handleInput}
+          ></input>
 
-          <button>Random Occupation</button>
+          <button onClick={() => console.log("Occupation")}>
+            Random Occupation
+          </button>
         </div>
 
         <div className="Form_Div">
-          <label for="Religious">
-            <input type="checkbox" name="Religious" id="Religious"></input>
+          <label htmlFor="religious_txt">
+            <input type="checkbox" name="religious"></input>
             Religious Background
           </label>
-          <textarea type="text" name="Religious_box"></textarea>
-
-          <button>Random Religious</button>
+          <br />
+          <div className="Txt_Btn">
+            <textarea
+              type="text"
+              name="religious_txt"
+              value={entryData.religious_txt}
+              onChange={handleInput}
+            ></textarea>
+            <br />
+            <button onClick={() => console.log("Religion")}>
+              Random Religion
+            </button>
+          </div>
         </div>
 
         <div className="Form_Div">
-          <label for="Religious">
-            <input type="checkbox" name="Religious" id="Religious"></input>
+          <label htmlFor="reason_txt">
+            <input type="checkbox" name="Reason"></input>
             Reason for meeting with missionaries
           </label>
-          <textarea type="text" name="Religious_box"></textarea>
           <br />
+          <div className="Txt_Btn">
+            <textarea
+              type="text"
+              name="reason_txt"
+              value={entryData.reason_txt}
+              onChange={handleInput}
+            ></textarea>
+            <br />
 
-          <button className="Restoration">Restoration</button>
-          <button className="Plan">Plan of Salvation</button>
-          <button className="Gospel">Gospel of Christ</button>
-          <button className="Law">Law of Charity</button>
-          <button className="Word">Word of Wisdom</button>
-          <button className="Any">Any Lesson</button>
+            <button
+              className="Restoration"
+              onClick={() => console.log("Restoration")}
+            >
+              Restoration
+            </button>
+            <button className="Plan" onClick={() => console.log("Plan")}>
+              Plan of Salvation
+            </button>
+            <button className="Gospel" onClick={() => console.log("Gospel")}>
+              Gospel of Christ
+            </button>
+            <button className="Law" onClick={() => console.log("Law")}>
+              Law of Chastity
+            </button>
+            <button className="Word" onClick={() => console.log("Word")}>
+              Word of Wisdom
+            </button>
+            <button className="Any" onClick={() => console.log("Any")}>
+              Any Lesson
+            </button>
+          </div>
         </div>
       </form>
     </div>
