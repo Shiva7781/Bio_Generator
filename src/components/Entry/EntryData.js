@@ -12,12 +12,12 @@ const EntryData = () => {
         <div className="Form_Div">
           <label for="name">Name</label>
           <input type="text" name="name" id="name"></input>
+
           <label for="Gender">Gender</label>
           <select name="Gender">
             <option>Mele</option>
             <option>Female</option>
           </select>
-
           <button>Random Name</button>
         </div>
 
@@ -27,7 +27,6 @@ const EntryData = () => {
             Location
           </label>
           <input type="text" name="location" id="location"></input>
-
           <button>Random Location</button>
         </div>
 
@@ -37,13 +36,11 @@ const EntryData = () => {
             School
           </label>
           <input type="text" name="school" id="school"></input>
-
           <button>Random School</button>
           <br />
 
           <label for="Major">Major</label>
           <input type="text" name="Major" id="Major"></input>
-
           <button>Random Major</button>
         </div>
 
@@ -70,16 +67,17 @@ const EntryData = () => {
         <div className="Form_Div">
           <label for="Religious">
             <input type="checkbox" name="Religious" id="Religious"></input>
-            Religious Background
+            Reason for meeting with missionaries
           </label>
           <textarea type="text" name="Religious_box"></textarea>
+          <br />
 
-          <button>Restoration</button>
-          <button>Plan of Salvation</button>
-          <button>Gospel of Christ</button>
-          <button>Law of Charity</button>
-          <button>Word of Wisdom</button>
-          <button>Any Lesson</button>
+          <button className="Restoration">Restoration</button>
+          <button className="Plan">Plan of Salvation</button>
+          <button className="Gospel">Gospel of Christ</button>
+          <button className="Law">Law of Charity</button>
+          <button className="Word">Word of Wisdom</button>
+          <button className="Any">Any Lesson</button>
         </div>
       </form>
     </div>

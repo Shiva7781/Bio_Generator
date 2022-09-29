@@ -5,7 +5,8 @@
 }
 
 .Entry_Data div>h2 {
-    height: 66px;
+    height: max-content;
+    padding: 3%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,20 +14,18 @@
 }
 
 .Form_Div {
-    height: 66px;
-    text-align: center;
+    height: max-content;
+    padding: 3%;
     margin-top: 3%;
-    /* border: 1px solid red; */
-
+    text-align: left;
     background-color: rgb(186, 195, 190);
+
+    /* border: 1px solid red; */
 }
 
 label {
     vertical-align: middle;
-    margin-right: auto;
     margin: 3px;
-    margin-bottom: 6px;
-    /* border: 1px solid red; */
 }
 
 input {
@@ -35,20 +34,20 @@ input {
     border: 1px solid#222b;
 }
 
-/* 
-select:not(:-internal-list-box) */
-
 option {
     font-weight: normal;
-    display: block;
-    white-space: block;
-    min-height: 1.2em;
+
 }
 
 button {
     padding: 3px;
     margin: 5px;
     background-color: #ddd9;
+
     border: 1px solid;
-    transition: .3s;
+
+}
+
+textarea {
+    background-color: #ddd9;
 }
