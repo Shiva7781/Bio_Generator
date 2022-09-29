@@ -1,0 +1,9 @@
+.Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66px;
+    background-color: rgb(186, 195, 190);
+
+    /* border: 1px solid red; */
+}

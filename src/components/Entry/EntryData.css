@@ -1,0 +1,54 @@
+.Entry_Data {
+    margin: 7%;
+    margin-top: 3%;
+    /* border: 1px solid red; */
+}
+
+.Entry_Data div>h2 {
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(186, 195, 190);
+}
+
+.Form_Div {
+    height: 66px;
+    text-align: center;
+    margin-top: 3%;
+    /* border: 1px solid red; */
+
+    background-color: rgb(186, 195, 190);
+}
+
+label {
+    vertical-align: middle;
+    margin-right: auto;
+    margin: 3px;
+    margin-bottom: 6px;
+    /* border: 1px solid red; */
+}
+
+input {
+    padding: 2px;
+    background-color: #fff7;
+    border: 1px solid#222b;
+}
+
+/* 
+select:not(:-internal-list-box) */
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: block;
+    min-height: 1.2em;
+}
+
+button {
+    padding: 3px;
+    margin: 5px;
+    background-color: #ddd9;
+    border: 1px solid;
+    transition: .3s;
+}
