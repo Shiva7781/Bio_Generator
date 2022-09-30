@@ -1,7 +1,10 @@
 import React from "react";
 import "./DisplayData.css";
 
-const DisplayData = () => {
+const DisplayData = ({ entryData, checkBoxes }) => {
+  console.log("entryData:", entryData);
+  console.log("checkBoxes:", checkBoxes);
+
   return (
     <div className="Display_Data">
       <div>

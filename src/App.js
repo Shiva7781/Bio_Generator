@@ -1,12 +1,12 @@
 import "./App.css";
 import Header from "./components/Header";
-import AllData from "./components/AllData";
+import EntryData from "./components/Entry/EntryData";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <AllData />
+      <EntryData />
     </div>
   );
 }
