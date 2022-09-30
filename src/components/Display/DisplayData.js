@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./DisplayData.css";
 
 const DisplayData = ({ entryData, checkBoxes }) => {
-  console.log("entryData:", entryData);
+  console.log("entryData:", entryData.school_text);
   console.log("checkBoxes:", checkBoxes);
+
+  const [displayAll, setDisplayAll] = useState();
+
+  useEffect(() => {
+    setDisplayAll(
+      `${entryData.username} is from ${
+        checkBoxes[0] ? entryData.location_txt : ""
+      }. ${
+        entryData.gender == "Male"
+          ? "He is studying in "
+          : "She is studying in "
+      } ${checkBoxes[1] ? entryData.school_txt : ""} ${entryData.major}`
+    );
+  }, [entryData, checkBoxes]);
 
   return (
     <div className="Display_Data">
@@ -11,17 +25,7 @@ const DisplayData = ({ entryData, checkBoxes }) => {
         <h2>Result</h2>
       </div>
       <div className="Show">
-        <p>
-          Will is from Vale, Oregon. He is studying Accounting at BYU. He was
-          raised without any religion in the home. For most of his life, he has
-          never had any interest in spiritual things. He is hoping to gain an
-          understanding of the purpose of life (if there is one) and what that
-          would mean to him. Will is from Vale, Oregon. He is studying
-          Accounting at BYU. He was raised without any religion in the home. For
-          most of his life, he has never had any interest in spiritual things.
-          He is hoping to gain an understanding of the purpose of life (if there
-          is one) and what that would mean to him.
-        </p>
+        <p>{displayAll}</p>
       </div>
     </div>
   );

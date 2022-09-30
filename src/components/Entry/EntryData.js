@@ -12,14 +12,14 @@ const EntryData = () => {
   const checkBoxes = [location, school, occupation, religious, reason];
 
   const [entryData, setEntryData] = useState({
-    username: "",
+    username: "Shiva",
     gender: "male",
-    location_text: "",
-    school_text: "",
-    major: "",
-    occupation_text: "",
-    religious_txt: "",
-    reason_txt: "",
+    location_text: "Nashik",
+    school_text: "K K Wagh",
+    major: "Poly",
+    occupation_text: "MERN",
+    religious_txt: " HINDU",
+    reason_txt: " Enjoy",
   });
 
   const handleInput = (e) => {
