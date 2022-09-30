@@ -46,7 +46,14 @@ const DisplayData = ({ entryData, checkBoxes }) => {
             entryData.religious_text +
             "."
           : ""
-      } ${checkBoxes[4] ? entryData.reason_text + "." : ""}`
+      } ${
+        checkBoxes[4]
+          ? (entryData.gender === "Male" ? "He" : "She") +
+            " " +
+            entryData.reason_text +
+            "."
+          : ""
+      }`
     );
   });
 
