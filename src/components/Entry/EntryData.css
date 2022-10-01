@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(224, 235, 229)
+    background-color: rgb(224, 235, 229);
 }
 
 .All_Data {
@@ -13,26 +13,29 @@ body {
     /* border: 1px solid red; */
 }
 
-
 @media only screen and (max-width: 1111px) {
     .All_Data {
         flex-direction: column;
 
+        /* border: 1px solid red */
     }
 
-    .All_Data .Entry_Data,
-    .Display_Data {
-        width: 99%;
+    .All_Data .Entry_Data {
+        width: fit-content;
         margin: auto;
-
-        /* border: 1px solid rgb(255, 0, 25); */
+        margin-top: 3%;
+        /* border: 1px solid red */
     }
 }
 
 /*  */
+.Avtar input {
+    background: none;
+    border: 0ch;
+}
 
 .Entry_Data {
-    width: 50%;
+    width: 60%;
     margin: 3%;
 
     /* border: 1px solid blue; */

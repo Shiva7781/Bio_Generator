@@ -12,32 +12,43 @@ const EntryData = () => {
   const checkBoxes = [location, school, occupation, religious, reason];
 
   const [entryData, setEntryData] = useState({
+    input_img: "",
+    input_video: "",
     username: "Shiva",
     gender: "Male",
     location_text: "Nashik",
     school_text: "K. K. Wagh",
     major: "Poly",
     occupation_text: "MERN",
-    religious_text: "HINDU",
+    religious_text: "HINDUISM",
     reason_text: "is looking to develop a more personal relationship with God",
   });
 
+  // ******* Geting all input data *******
   const handleInput = (e) => {
     const field = e.target.name;
     const value = e.target.value;
-    console.log(`Field: ${field}  & Value: ${value}`);
+    // console.log(`Field: ${field}  & Value: ${value}`);
 
-    setEntryData({ ...entryData, [field]: value });
+    if (field === "input_img" || field === "input_video") {
+      setEntryData({
+        ...entryData,
+        [field]: URL.createObjectURL(e.target.files[0]),
+      });
+    } else {
+      setEntryData({ ...entryData, [field]: value });
+    }
     // console.log("entryData:", entryData);
   };
 
   const submitForm = (e) => {
     e.preventDefault();
 
-    console.log("entryData:", entryData);
+    // console.log("entryData:", entryData);
     // console.log("entryData:", entryData.location_text);
   };
 
+  // ******* CheckBoxes selection/removal *******
   const locationCheck = (e) => {
     location ? setLocation(false) : setLocation(true);
     console.log("location:", location);
@@ -67,6 +78,34 @@ const EntryData = () => {
         </div>
 
         <form className="Option_Form" onSubmit={submitForm}>
+          <div className="Form_Div">
+            <div className="Avtar">
+              <label htmlFor="input_img">Avtar</label>
+              <input
+                type="file"
+                name="input_img"
+                id="input_img"
+                accept="image/*"
+                value={entryData.avtar}
+                onChange={handleInput}
+              ></input>
+            </div>
+          </div>
+
+          <div className="Form_Div">
+            <div className="Avtar">
+              <label htmlFor="input_video">Introduction</label>
+              <input
+                type="file"
+                name="input_video"
+                id="input_video"
+                accept="video/*"
+                value={entryData.introduction}
+                onChange={handleInput}
+              ></input>
+            </div>
+          </div>
+
           <div className="Form_Div">
             <label htmlFor="username">Name</label>
             <input
