@@ -1,7 +1,7 @@
 @media only screen and (max-width: 1111px) {
     .All_Data .Display_Data {
-        width: 55%;
-        min-width: 325px;
+        width: 75%;
+        min-width: 303px;
         margin: auto;
         margin-top: 3%;
         /* border: 1px solid red */
@@ -10,9 +10,12 @@
     img,
     video {
         margin: 1%;
-        width: 321px
-            /* border: 1px solid red */
+        width: 100%;
+
+        /* border: 1px solid red */
     }
+
+
 }
 
 .Display_Data {
