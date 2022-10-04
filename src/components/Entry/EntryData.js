@@ -18,16 +18,88 @@ const EntryData = () => {
     gender: "Male",
     location_text: "Nashik",
     school_text: "K. K. Wagh",
-    major: "Poly",
+    major: "Polytechnic",
     occupation_text: "MERN",
-    religious_text: "HINDUISM",
+    religious_text: "HINDUISM and beliving in God",
     reason_text: "is looking to develop a more personal relationship with God",
   });
 
-  // ******* Geting all input data *******
+  // random data selection *******
+  const nameR = [
+    "Shiva",
+    "Rohit",
+    "Karla",
+    "Tarun",
+    "Gia",
+    "Sashanka",
+    "Sera",
+    "Akash",
+    "Jaye",
+    "Ranjit",
+    "Paige",
+    "Blake",
+    "coco",
+    "Penney",
+    "Laney",
+  ];
+  const locationR = ["Nashik", "Philadelphia", "Gorakhpur"];
+  const schoolR = ["K. K. Wagh", "Matoshri", "the University of Utah"];
+  const majorR = ["Animation", "Mechanical Engineering", "Entrepreneurship"];
+  const occupationR = [
+    "Frontend",
+    "Backend",
+    "database administrator",
+    "elementary school teacher",
+  ];
+  const religiousR = [
+    "Hinduism, Sanatani, and has a strong belief in Bhagavad Gita",
+    "Christian, but rarely went to church",
+    "Buddhist, and considers herself very spiritual.",
+  ];
+  const reasonR = [
+    "likes reading the Bible and talking about it",
+    "wants to grow closer to God and find purpose in life",
+    "is looking to develop a more personal relationship with God",
+    "hopes that the missionaries can help her grow a relationship with God.",
+    "has been questioning whether God exists and would like a fresh perspective",
+    "is having a difficult time in life and is looking for ways to find greater peace, joy, and purpose in life",
+  ];
+
+  const selectRandomName = (e) => {
+    console.log(e.target.name);
+    let x = Math.floor(Math.random() * nameR.length);
+    setEntryData({ ...entryData, ["username"]: nameR[x] });
+  };
+  const selectRandomLocation = () => {
+    let x = Math.floor(Math.random() * locationR.length);
+    setEntryData({ ...entryData, ["location_text"]: locationR[x] });
+  };
+  const selectRandomSchool = () => {
+    let x = Math.floor(Math.random() * schoolR.length);
+    setEntryData({ ...entryData, ["school_text"]: schoolR[x] });
+  };
+  const selectRandomMajor = () => {
+    let x = Math.floor(Math.random() * majorR.length);
+    setEntryData({ ...entryData, ["major"]: majorR[x] });
+  };
+  const selectRandomOccupation = () => {
+    let x = Math.floor(Math.random() * occupationR.length);
+    setEntryData({ ...entryData, ["occupation_text"]: occupationR[x] });
+  };
+  const selectRandomReligious = () => {
+    let x = Math.floor(Math.random() * religiousR.length);
+    setEntryData({ ...entryData, ["religious_text"]: religiousR[x] });
+  };
+  const selectRandomReason = () => {
+    let x = Math.floor(Math.random() * reasonR.length);
+    setEntryData({ ...entryData, ["reason_text"]: reasonR[x] });
+  };
+
+  // input field data catching *******
   const handleInput = (e) => {
     const field = e.target.name;
     const value = e.target.value;
+
     // console.log(`Field: ${field}  & Value: ${value}`);
 
     if (field === "input_img" || field === "input_video") {
@@ -48,26 +120,26 @@ const EntryData = () => {
     // console.log("entryData:", entryData.location_text);
   };
 
-  // ******* CheckBoxes selection/removal *******
+  // checkboxes selection/removal *******
   const locationCheck = (e) => {
     location ? setLocation(false) : setLocation(true);
-    console.log("location:", location);
+    // console.log("location:", location);
   };
   const schoolCheck = () => {
     school ? setSchool(false) : setSchool(true);
-    console.log("school:", school);
+    // console.log("school:", school);
   };
   const occupationCheck = () => {
     occupation ? setOccupation(false) : setOccupation(true);
-    console.log("occupation:", occupation);
+    // console.log("occupation:", occupation);
   };
   const religiousCheck = () => {
     religious ? setReligious(false) : setReligious(true);
-    console.log("religious:", religious);
+    // console.log("religious:", religious);
   };
   const reasonCheck = () => {
     reason ? setReason(false) : setReason(true);
-    console.log("reason:", reason);
+    // console.log("reason:", reason);
   };
 
   return (
@@ -111,6 +183,7 @@ const EntryData = () => {
             <input
               type="text"
               name="username"
+              id="username"
               value={entryData.username}
               onChange={handleInput}
             ></input>
@@ -120,7 +193,7 @@ const EntryData = () => {
               <option>Male</option>
               <option>Female</option>
             </select>
-            <button onClick={() => console.log("Click")}>Random Name</button>
+            <button onClick={selectRandomName}>Random Name</button>
           </div>
 
           <div className="Form_Div">
@@ -136,12 +209,11 @@ const EntryData = () => {
             <input
               type="text"
               name="location_text"
+              id="location_text"
               value={entryData.location_text}
               onChange={handleInput}
             ></input>
-            <button onClick={() => console.log("Location")}>
-              Random Location
-            </button>
+            <button onClick={selectRandomLocation}>Random Location</button>
           </div>
 
           <div className="Form_Div">
@@ -157,20 +229,22 @@ const EntryData = () => {
             <input
               type="text"
               name="school_text"
+              id="school_text"
               value={entryData.school_text}
               onChange={handleInput}
             ></input>
-            <button onClick={() => console.log("School")}>Random School</button>
+            <button onClick={selectRandomSchool}>Random School</button>
             <br />
 
             <label htmlFor="major">Major</label>
             <input
               type="text"
               name="major"
+              id="major"
               value={entryData.major}
               onChange={handleInput}
             ></input>
-            <button onClick={() => console.log("Major")}>Random Major</button>
+            <button onClick={selectRandomMajor}>Random Major</button>
           </div>
 
           <div className="Form_Div">
@@ -186,13 +260,12 @@ const EntryData = () => {
             <input
               type="text"
               name="occupation_text"
+              id="occupation_text"
               value={entryData.occupation_text}
               onChange={handleInput}
             ></input>
 
-            <button onClick={() => console.log("Occupation")}>
-              Random Occupation
-            </button>
+            <button onClick={selectRandomOccupation}>Random Occupation</button>
           </div>
 
           <div className="Form_Div">
@@ -210,13 +283,12 @@ const EntryData = () => {
               <textarea
                 type="text"
                 name="religious_text"
+                id="religious_text"
                 value={entryData.religious_text}
                 onChange={handleInput}
               ></textarea>
               <br />
-              <button onClick={() => console.log("Religion")}>
-                Random Religion
-              </button>
+              <button onClick={selectRandomReligious}>Random Religion</button>
             </div>
           </div>
 
@@ -235,30 +307,28 @@ const EntryData = () => {
               <textarea
                 type="text"
                 name="reason_text"
+                id="reason_text"
                 value={entryData.reason_text}
                 onChange={handleInput}
               ></textarea>
               <br />
 
-              <button
-                className="Restoration"
-                onClick={() => console.log("Restoration")}
-              >
+              <button className="Restoration" onClick={selectRandomReason}>
                 Restoration
               </button>
-              <button className="Plan" onClick={() => console.log("Plan")}>
+              <button className="Plan" onClick={selectRandomReason}>
                 Plan of Salvation
               </button>
-              <button className="Gospel" onClick={() => console.log("Gospel")}>
+              <button className="Gospel" onClick={selectRandomReason}>
                 Gospel of Christ
               </button>
-              <button className="Law" onClick={() => console.log("Law")}>
+              <button className="Law" onClick={selectRandomReason}>
                 Law of Chastity
               </button>
-              <button className="Word" onClick={() => console.log("Word")}>
+              <button className="Word" onClick={selectRandomReason}>
                 Word of Wisdom
               </button>
-              <button className="Any" onClick={() => console.log("Any")}>
+              <button className="Any" onClick={selectRandomReason}>
                 Any Lesson
               </button>
             </div>

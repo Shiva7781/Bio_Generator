@@ -100,7 +100,7 @@ const DisplayData = ({ entryData, checkBoxes }) => {
       //   console.log("fn translateText translateLanguage:", translateLanguage);
 
       let res = await fetch("https://libretranslate.de/translate", {
-        // mode: "no-cors",
+        mode: "no-cors",
         method: "POST",
         body: JSON.stringify({
           // q: input,
